@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { createApp, getCurrentInstance, onMounted, ref } from 'vue';
+import { createApp, onMounted, ref } from 'vue';
 import Input from '@/components/dragCmp/Input.vue';
 
 const mainEditor = ref<Element | null>(null)

@@ -12,7 +12,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
-  rule: {
+  rules: {
     'vue/multi-word-component-names': ['error', { ignores: ['Input'] }]
   }
 }
