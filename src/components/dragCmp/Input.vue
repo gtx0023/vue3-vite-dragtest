@@ -9,6 +9,8 @@ const props = defineProps({
         default: '请输入'
     }
 })
+const countStyle = ref<StyleValue>()
+
 
 function buttonClick() {
     emit('submit')
@@ -18,16 +20,15 @@ onMounted(()=>{
 })
 
 watch(props,()=>{
-      console.log('props change')
       getStyle();
     },
     { deep: true }
 )
 
 function getStyle(){
-  return {
-    left: `${props.x}px`,
-    top: `${props.y}px`,
+  countStyle.value =  {
+    left: `${props.x.value}px`,
+    top: `${props.y.value}px`,
     width: `${props.width}px`,
     height: `${props.height}px`
   }
@@ -35,7 +36,7 @@ function getStyle(){
 </script>
 
 <template>
-    <div class="editor-input" :style="getStyle">
+    <div class="editor-input" :style="countStyle">
         <input type="text" @click="buttonClick" :placeholder="placeholder">
     </div>
 </template>
